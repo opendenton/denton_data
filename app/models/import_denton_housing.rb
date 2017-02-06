@@ -32,4 +32,4 @@ class ImportDentonHousing
 
 end
 
-DentonHousing.import_housing
+ImportDentonHousing.import_housing
