@@ -6,12 +6,14 @@ and the framework for the API is [Sinatra](http://www.sinatrarb.com/).
 
 #### Install & bootstrap
 
-- [Install PostgreSQL](http://www.postgresqltutorial.com/install-postgresql/)
+- Install PostgreSQL
+  - [Mac](https://launchschool.com/blog/how-to-install-postgresql-on-a-mac)
+  - [Windows](http://www.postgresqltutorial.com/install-postgresql/)
 - Make sure you have [ruby installed](https://www.ruby-lang.org/en/documentation/installation/)
 - From the project directory, `gem install bundler`
 - Then `bundle install`
 - To bootstrap the db, run `sh bootstrap.sh`
-- Then create the schema with `PGPASSWORD=password1 psql -d denton_data -U denton_data -f db\schema.sql`
+- Then create the schema with `PGPASSWORD=password1 psql -d denton_data -U denton_data -f db/schema.sql`
 
 #### Running
 
@@ -21,3 +23,13 @@ and the framework for the API is [Sinatra](http://www.sinatrarb.com/).
   - http://localhost:4567/denton-housing
   - http://localhost:4567/total-housing-units?year=2009
   - http://localhost:4567/vacant_housing_units?year=2009
+
+#### Troubleshooting
+
+If you get the following error:
+```
+$ psql: FATAL:  database "<user>" does not exist
+```
+Run the shell command, `createdb`. This creates a database with the name of the current user.
+
+Source: [Stack Overflow Article](http://stackoverflow.com/questions/17633422/psql-fatal-database-user-does-not-exist).
