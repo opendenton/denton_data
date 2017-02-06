@@ -9,6 +9,6 @@ get '/total-housing-units' do
   DentonHousing.total_housing_units(params["year"])
 end
 
-get '/vacant_housing_unit' do
-  DentonHousing.vacant_housing_unit(params["year"])
+get '/vacant_housing_units' do
+  DentonHousing.vacant_housing_units(params["year"])
 end
