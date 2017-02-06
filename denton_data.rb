@@ -1,4 +1,3 @@
-require 'ap'
 require 'pg'
 
 class DentonData

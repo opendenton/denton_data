@@ -1,10 +1,7 @@
-require 'httparty'
 require 'json'
-require 'ap'
 require_relative './denton_data'
 
 class DentonHousing
-
 
   def self.get_housing
     conn = DentonData.connection
@@ -22,7 +19,6 @@ class DentonHousing
     end
   end
 
-  # total_housing_units | vacant_housing_units | occupied_housing_units | owner_occupied | median_gross_rent | renter_occupied
   def self.vacant_housing_units(year)
     if year
       DentonData.connection.exec(
@@ -30,4 +26,5 @@ class DentonHousing
       )
     end
   end
+
 end

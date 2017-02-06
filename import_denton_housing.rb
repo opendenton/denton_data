@@ -1,6 +1,4 @@
 require 'httparty'
-require 'json'
-require 'ap'
 require_relative './denton_data'
 
 class ImportDentonHousing
@@ -9,6 +7,7 @@ class ImportDentonHousing
     conn = DentonData.connection
     tld = "http://data.cityofdenton.com/api/action"
     response = HTTParty.get("#{tld}/datastore_search\?resource_id\=815db0db-9e6e-4c08-b516-80b9a2539142")
+
     records = response["result"]["records"].reduce({}) do |accum, record|
       year = record.delete("year")
       accum[year] ||= {}
@@ -17,7 +16,6 @@ class ImportDentonHousing
     end
 
     records.each do |year, rec|
-
       conn.exec %Q{
         INSERT INTO denton_housing VALUES(
           #{year},
