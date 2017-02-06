@@ -11,7 +11,7 @@ and the framework for the API is [Sinatra](http://www.sinatrarb.com/).
 - From the project directory, `gem install bundler`
 - Then `bundle install`
 - To bootstrap the db, run `sh bootstrap.sh`
-- Then create the schema with `PGPASSWORD=password1 psql -d denton_data -U denton_data -f migrate.sql`
+- Then create the schema with `PGPASSWORD=password1 psql -d denton_data -U denton_data -f db\schema.sql`
 
 #### Running
 
