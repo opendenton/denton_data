@@ -17,8 +17,8 @@ and the framework for the API is [Sinatra](http://www.sinatrarb.com/).
 
 #### Running
 
-- To import data from the city into the local schema: `bundle exec ruby app\models\import_denton_housing.rb`
-- To run the server locally: `bundle exec ruby app\app.rb`
+- To import data from the city into the local schema: `bundle exec ruby app/models/import_denton_housing.rb`
+- To run the server locally: `bundle exec ruby app/app.rb`
 - See example APIs locally (the 'year' params can vary between 2008 and 2014):
   - http://localhost:4567/denton-housing
   - http://localhost:4567/total-housing-units?year=2009
