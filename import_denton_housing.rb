@@ -17,11 +17,6 @@ class ImportDentonHousing
     end
 
     records.each do |year, rec|
-      conn = PG.connect(
-        :dbname => 'denton_data',
-        :user => 'denton_data',
-        :password => 'password1'
-      )
 
       conn.exec %Q{
         INSERT INTO denton_housing VALUES(
@@ -40,22 +35,3 @@ class ImportDentonHousing
 end
 
 DentonHousing.import_housing
-
-
-#  [0] "Total Housing Units",
-#  [1] "Vacant Housing Units",
-#  [2] "Occupied Housing Units",
-#  [3] "Owner Occupied",
-#  [4] "Renter Occupied",
-#  [5] "Median Gross Rent"
-#
-#
-#
-#{
-#   "_id" => 1,
-#   "title_field" => "Total Housing Units",
-#   "value" => "49109",
-#   "year" => "2014"
-#}
-
-
