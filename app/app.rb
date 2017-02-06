@@ -1,5 +1,5 @@
 require 'sinatra'
-require_relative './denton_housing'
+require_relative './models/denton_housing'
 
 get '/denton-housing' do
   DentonHousing.get_housing.to_json
