@@ -11,12 +11,12 @@ and the framework for the API is [Sinatra](http://www.sinatrarb.com/).
 - From the project directory, `gem install bundler`
 - Then `bundle install`
 - To bootstrap the db, run `sh bootstrap.sh`
-- Then create the schema with `PGPASSWORD=password1 psql -d denton_data -U denton_data -f db\schema.sql`
+- Then create the schema with `PGPASSWORD=password1 psql -d denton_data -U denton_data -f db/schema.sql`
 
 #### Running
 
-- To import data from the city into the local schema: `bundle exec ruby app\models\import_denton_housing.rb`
-- To run the server locally: `bundle exec ruby app\app.rb`
+- To import data from the city into the local schema: `bundle exec ruby app/models/import_denton_housing.rb`
+- To run the server locally: `bundle exec ruby app/app.rb`
 - See example APIs locally (the 'year' params can vary between 2008 and 2014):
   - http://localhost:4567/denton-housing
   - http://localhost:4567/total-housing-units?year=2009
