@@ -28,8 +28,19 @@ and the framework for the API is [Sinatra](http://www.sinatrarb.com/).
 
 If you get the following error:
 ```
-$ psql: FATAL:  database "<user>" does not exist
+➜ psql: FATAL:  database "<user>" does not exist
 ```
 Run the shell command, `createdb`. This creates a database with the name of the current user.
 
 Source: [Stack Overflow Article](http://stackoverflow.com/questions/17633422/psql-fatal-database-user-does-not-exist).
+
+---
+
+If you used Brew to install Postgres, you can also use [services](https://robots.thoughtbot.com/starting-and-stopping-background-services-with-homebrew)
+to start and stop the `psql` background service.
+
+```raw
+➜ brew tap homebrew/services        ## if you don't have it already installed
+➜ brew services start postgresql
+➜ brew services start postgresql
+```
