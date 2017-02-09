@@ -1,5 +1,8 @@
 require 'sinatra'
 require_relative './models/denton_housing'
+require "sinatra/activerecord"
+
+set :database_file, "../config/database.yml"
 
 get '/denton-housing' do
   DentonHousing.get_housing.to_json
