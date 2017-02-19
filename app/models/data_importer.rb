@@ -1,35 +1,50 @@
 require 'json'
-require "sinatra/activerecord"
-require_relative './well_inspection'
+require 'httparty'
+require 'ap'
+require_relative './hash'
 
 class DataImporter
 
-  def init
-    save_objects
+  DATA_DIR = File.join(File.dirname(__FILE__), '../../data')
+  TLD = "http://data.cityofdenton.com/api/action"
+
+  def self.get_sampling(resource_id, limit=25)
+    response = HTTParty.get("#{TLD}/datastore_search\?resource_id\=#{resource_id}&limit=#{limit}")
+    result = response['result']
+
+    self.save_sample_data(result)
   end
 
-  # for now get from data.json
-  # eventually hit the API endpoint and
-  # 1. parse headers to create table
-  # 2. build migration
-  # 3. run migration
-  # 4. parse json for data array
-  # 5. store json objs as ar instances
-  def get_data
-    null = nil
+  def self.get_all(resource_id)
+    offset = 0
+    response = self.get_page(resource_id, offset)
+    total = response["result"]["total"].to_i
+    records = response["result"]["records"]
 
-    data = File.read('/home/alexa/Desktop/projects/denton_data/data/data.json')
-    JSON.parse(data)
-  end
-
-  def save_objects
-    get_data.each do |inspection|
-      WellInspection.create(inspection)
+    while offset <= total
+      response = self.get_page(resource_id, offset)
+      records += response["result"]["records"]
+      offset += 100
     end
+
+    records.map(&:downcase_key)
   end
 
+  private 
+  
+    def self.get_page(resource_id, offset)
+      HTTParty.get("#{TLD}/datastore_search\?offset\=#{offset}\&resource_id\=#{resource_id}")
+    end
+
+    def self.save_sample_data(result)
+      file_name = DATA_DIR + '/temp_data_' + self.current_time
+      File.open(file_name, 'w+') { |f| f.write JSON.pretty_generate(result) }
+    end
+
+    def self.current_time
+      timestamp = Time.now.strftime('%s')
+    end
 
 end
-puts File.dirname(__FILE__)
-d = DataImporter.new
-d.init
+
+
