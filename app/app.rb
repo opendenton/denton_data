@@ -1,7 +1,8 @@
 require 'sinatra'
-require_relative './models/denton_housing'
 require "sinatra/activerecord"
+require_relative './models/denton_housing'
 require_relative './models/well_inspection'
+require_relative './models/data_saver'
 
 configure :production do
   ActiveRecord::Base.establish_connection(ENV['DATABASE_URL'])
@@ -32,6 +33,6 @@ end
 
 # Well Inspection Layers
 
-# get '/well_inspections' do
-#   DentonHousing.vacant_housing_units(params["year"])
-# end
+get '/import_data' do
+  WellInspection.import
+end
