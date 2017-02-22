@@ -22,22 +22,22 @@ class DataImporter
     records = response["result"]["records"]
 
     while offset <= total
+      offset += 100
       response = self.get_page(resource_id, offset)
       records += response["result"]["records"]
-      offset += 100
     end
 
     records.map(&:downcase_key)
   end
 
-  private 
-  
+  private
+
     def self.get_page(resource_id, offset)
       HTTParty.get("#{TLD}/datastore_search\?offset\=#{offset}\&resource_id\=#{resource_id}")
     end
 
     def self.save_sample_data(result)
-      file_name = DATA_DIR + '/temp_data_' + self.current_time
+      file_name = DATA_DIR + '/temp_data_' + self.current_time + '.json'
       File.open(file_name, 'w+') { |f| f.write JSON.pretty_generate(result) }
     end
 
@@ -46,5 +46,3 @@ class DataImporter
     end
 
 end
-
-
