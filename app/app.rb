@@ -3,6 +3,7 @@ require "sinatra/activerecord"
 require_relative './models/denton_housing'
 require_relative './models/well_inspection'
 require_relative './models/data_saver'
+require_relative './models/import_denton_housing'
 
 configure :production do
   ActiveRecord::Base.establish_connection(ENV['DATABASE_URL'])
@@ -35,4 +36,5 @@ end
 
 get '/import_data' do
   WellInspection.import
+  ImportDentonHousing.import_housing
 end

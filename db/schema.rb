@@ -15,6 +15,16 @@ ActiveRecord::Schema.define(version: 20170219083646) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "denton_housing", id: false, force: :cascade do |t|
+    t.integer "year"
+    t.integer "total_housing_units"
+    t.integer "vacant_housing_units"
+    t.integer "occupied_housing_units"
+    t.integer "owner_occupied"
+    t.integer "median_gross_rent"
+    t.integer "renter_occupied"
+  end
+
   create_table "well_inspections", force: :cascade do |t|
     t.integer  "x"
     t.integer  "y"

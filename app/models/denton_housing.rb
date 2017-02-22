@@ -1,11 +1,10 @@
 require 'json'
 require_relative './denton_data'
 
-class DentonHousing
-
+class DentonHousing < ActiveRecord::Base
   def self.get_housing
-    conn = DentonData.connection
-    records = conn.exec("SELECT * FROM denton_housing")
+    conn = ActiveRecord::Base.connection
+    records = conn.execute("SELECT * FROM denton_housing")
     records.map do |record|
       record.to_hash
     end
@@ -13,7 +12,7 @@ class DentonHousing
 
   def self.total_housing_units(year)
     if year
-      DentonData.connection.exec(
+      ActiveRecord::Base.connection.execute(
         "select total_housing_units from denton_housing where year = #{year};"
       )
     end
@@ -21,7 +20,7 @@ class DentonHousing
 
   def self.vacant_housing_units(year)
     if year
-      DentonData.connection.exec(
+      ActiveRecord::Base.connection.execute(
         "select vacant_housing_units from denton_housing where year = #{year};"
       )
     end
