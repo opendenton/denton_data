@@ -14,30 +14,41 @@ configure :development do
   set :database_file, "../config/database.yml"
 end
 
-get '/denton-housing' do
-  #DentonHouse.get_housing.to_json
+###############################################
+# Import all data
+# - Add additional import methods to this route
+###############################################
 
-  puts JSON.pretty_generate(DentonHouse.get_housing)
+get '/import_data' do
+  WellInspection.import
+  ImportDentonHouse.import_housing
+end
+
+#################
+# Denton Houses #
+#################
+
+get '/denton-housing' do
+  DentonHouse.get_housing.to_json
+
+  #puts JSON.pretty_generate(DentonHouse.get_housing)
 end
 
 get '/total-housing-units' do
-  DentonHouse.total_housing_units(params["year"])
+  DentonHouse.total_housing_units(params["year"]).to_json
 end
 
 get '/vacant_housing_units' do
-  DentonHouse.vacant_housing_units(params["year"])
+  DentonHouse.vacant_housing_units(params["year"]).to_json
 end
+
+###################
+# Well Inspection #
+###################
 
 get '/' do
   # WellInspection.delete_all
   time = Time.now
   inspections = WellInspection.order(objectid: :asc)
   "Number of entries: #{inspections.count}<br>#{inspections.map { |i| i.objectid }}!"
-end
-
-# Well Inspection Layers
-
-get '/import_data' do
-  WellInspection.import
-  ImportDentonHouse.import_housing
 end
