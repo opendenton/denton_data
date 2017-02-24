@@ -16,14 +16,15 @@ and the framework for the API is [Sinatra](http://www.sinatrarb.com/).
 
 #### Running
 
-- To import data from the city into the local schema: `bundle exec ruby app/models/import_denton_housing.rb`
 - To run the server locally: `bundle exec ruby app/app.rb`
+- To import all available data, go to `<host[:port]>/import-data`
+- To delete all current data, go to `<host[:port]>/delete-data`
 - See example APIs locally (the 'year' params can vary between 2008 and 2014):
   - http://localhost:4567/denton-housing
   - http://localhost:4567/total-housing-units?year=2009
-  - http://localhost:4567/vacant_housing_units?year=2009
+  - http://localhost:4567/vacant-housing-units?year=2009
 
-### Troubleshooting
+## Troubleshooting
 
 If you get the following error:
 ```
@@ -43,3 +44,16 @@ to start and stop the `psql` background service.
 ➜ brew services start postgresql
 ➜ brew services start postgresql
 ```
+
+---
+
+If the app crashes with the following warning:
+
+```
+$ ActiveRecord::ConnectionTimeoutError - could not obtain a connection from the pool within 5.000 seconds (waited 5.001 seconds); all pooled connections were in use:
+```
+
+You broke it!
+
+Just kidding.. but the app will need to be restarted. We still need to build in
+some logic for handling blocking calls. Thanks fer yor patience!

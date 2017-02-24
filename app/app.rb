@@ -19,9 +19,18 @@ end
 # - Add additional import methods to this route
 ###############################################
 
-get '/import_data' do
+get '/import-data' do
   WellInspection.import
   ImportDentonHouse.import_housing
+end
+
+###################
+# Delete all data #
+###################
+
+get '/delete-data' do
+  WellInspection.delete_all
+  DentonHouse.delete_all
 end
 
 #################
@@ -38,7 +47,7 @@ get '/total-housing-units' do
   DentonHouse.total_housing_units(params["year"]).to_json
 end
 
-get '/vacant_housing_units' do
+get '/vacant-housing-units' do
   DentonHouse.vacant_housing_units(params["year"]).to_json
 end
 
@@ -47,7 +56,6 @@ end
 ###################
 
 get '/' do
-  # WellInspection.delete_all
   time = Time.now
   inspections = WellInspection.order(objectid: :asc)
   "Number of entries: #{inspections.count}<br>#{inspections.map { |i| i.objectid }}!"

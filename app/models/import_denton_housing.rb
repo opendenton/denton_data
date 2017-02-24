@@ -1,6 +1,6 @@
 require 'httparty'
 
-class ImportDentonHousing
+class ImportDentonHouse
   def self.import_housing
     tld = "http://data.cityofdenton.com/api/action"
     response = HTTParty.get("#{tld}/datastore_search\?resource_id\=815db0db-9e6e-4c08-b516-80b9a2539142")
