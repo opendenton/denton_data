@@ -1,6 +1,7 @@
+require 'json'
 require 'sinatra'
 require "sinatra/activerecord"
-require_relative './models/denton_housing'
+require_relative './models/denton_houses'
 require_relative './models/well_inspection'
 require_relative './models/data_saver'
 require_relative './models/import_denton_housing'
@@ -14,15 +15,17 @@ configure :development do
 end
 
 get '/denton-housing' do
-  DentonHousing.get_housing.to_json
+  #DentonHouse.get_housing.to_json
+
+  puts JSON.pretty_generate(DentonHouse.get_housing)
 end
 
 get '/total-housing-units' do
-  DentonHousing.total_housing_units(params["year"])
+  DentonHouse.total_housing_units(params["year"])
 end
 
 get '/vacant_housing_units' do
-  DentonHousing.vacant_housing_units(params["year"])
+  DentonHouse.vacant_housing_units(params["year"])
 end
 
 get '/' do
@@ -36,5 +39,5 @@ end
 
 get '/import_data' do
   WellInspection.import
-  ImportDentonHousing.import_housing
+  ImportDentonHouse.import_housing
 end

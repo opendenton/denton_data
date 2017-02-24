@@ -10,12 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170219083646) do
+ActiveRecord::Schema.define(version: 20170223000002) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "denton_housing", id: false, force: :cascade do |t|
+  create_table "denton_houses", force: :cascade do |t|
     t.integer "year"
     t.integer "total_housing_units"
     t.integer "vacant_housing_units"
