@@ -1,10 +1,7 @@
 require 'httparty'
-require_relative './denton_data'
 
-class ImportDentonHousing
-
+class ImportDentonHouse
   def self.import_housing
-    conn = DentonData.connection
     tld = "http://data.cityofdenton.com/api/action"
     response = HTTParty.get("#{tld}/datastore_search\?resource_id\=815db0db-9e6e-4c08-b516-80b9a2539142")
 
@@ -16,20 +13,15 @@ class ImportDentonHousing
     end
 
     records.each do |year, rec|
-      conn.exec %Q{
-        INSERT INTO denton_housing VALUES(
-          #{year},
-          #{rec["Total Housing Units"]},
-          #{rec["Vacant Housing Units"]},
-          #{rec["Occupied Housing Units"]},
-          #{rec["Owner Occupied"]},
-          #{rec["Renter Occupied"]},
-          #{rec["Median Gross Rent"]}
-        )
-      }
+      DentonHouse.create!(
+        year: year,
+        total_housing_units: rec["Total Housing Units"],
+        vacant_housing_units: rec["Vacant Housing Units"],
+        occupied_housing_units: rec["Occupied Housing Units"],
+        owner_occupied: rec["Owner Occupied"],
+        median_gross_rent: rec["Median Gross Rent"],
+        renter_occupied: rec["Renter Occupied"],
+      )
     end
   end
-
 end
-
-ImportDentonHousing.import_housing
