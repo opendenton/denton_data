@@ -37,13 +37,10 @@ class DataSaver
     def self.parse_attributes(fields)
       attributes = {}
       fields.each do |field|
-        puts "id" + field["id"]
-        puts "type" + field["type"]
         attr_name = field["id"]
         data_type = FIELDS_MAP[field["type"].to_sym]
         attributes[attr_name] = data_type
       end
-      puts attributes
       attributes
     end
 
