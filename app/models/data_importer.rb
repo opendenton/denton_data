@@ -2,17 +2,17 @@ require 'json'
 require 'httparty'
 require 'ap'
 require_relative './hash'
+require_relative './data_saver'
 
 class DataImporter
 
-  DATA_DIR = File.join(File.dirname(__FILE__), '../../data')
   TLD = "http://data.cityofdenton.com/api/action"
 
-  def self.get_sampling(resource_id, limit=25)
+  def self.get_sampling(resource_id, table_name, limit=25)
     response = HTTParty.get("#{TLD}/datastore_search\?resource_id\=#{resource_id}&limit=#{limit}")
     result = response['result']
-
-    self.save_sample_data(result)
+    ap result
+    DataSaver.save_sample_data(result, table_name)
   end
 
   def self.get_all(resource_id)
@@ -33,15 +33,6 @@ class DataImporter
   private 
     def self.get_page(resource_id, offset)
       HTTParty.get("#{TLD}/datastore_search\?offset\=#{offset}\&resource_id\=#{resource_id}")
-    end
-
-    def self.save_sample_data(result)
-      file_name = DATA_DIR + '/temp_data_' + self.current_time + '.json'
-      File.open(file_name, 'w+') { |f| f.write JSON.pretty_generate(result) }
-    end
-
-    def self.current_time
-      timestamp = Time.now.strftime('%s')
     end
 
 end
