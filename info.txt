@@ -1,0 +1,27 @@
+---------
+DATA SETS
+---------
+
+Gas Well Inspection Layers
+d307a335-e76f-4600-90be-f69c8c8d562f
+
+
+What data sets can be handled by the generic DataImporter?
+
+some text
+
+
+Endpoints
+http://data.cityofdenton.com/api/action/datastore_search?resource_id=bab8bb7c-9942-4b5c-b657-e915ce599bd4
+
+
+
+
+----
+TODO
+----
+
+Add ruby version
+Convert schema.sql to AR migration so that running `rake db:migrate` will just work
+Update README to reflect AR changes
+Convert housing to use AR
