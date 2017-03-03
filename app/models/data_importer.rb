@@ -11,8 +11,6 @@ class DataImporter
   def self.get_sampling(resource_id, table_name, limit=25)
     response = HTTParty.get("#{TLD}/datastore_search\?resource_id\=#{resource_id}&limit=#{limit}")
     result = response['result']
-    # ap result
-    # DataSaver.save_sample_data(result, table_name)
     FileGenerator.generate_initial(resource_id, table_name, result)
   end
 

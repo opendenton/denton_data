@@ -10,10 +10,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170303033131) do
+ActiveRecord::Schema.define(version: 20170303231753) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "billboards", force: :cascade do |t|
+    t.integer "_id"
+    t.integer "x"
+    t.integer "y"
+    t.integer "objectid"
+    t.integer "billboardid"
+    t.string  "idbyowner"
+    t.string  "owner"
+    t.string  "parcelowner"
+    t.string  "codsitus"
+    t.string  "parcelid"
+    t.string  "permitid"
+    t.string  "zoningcode"
+    t.string  "frontadvertisement"
+    t.string  "rearadvertisement"
+    t.integer "supportquantity"
+    t.string  "supportmaterial"
+    t.integer "lightquantity"
+    t.string  "lighttype"
+    t.string  "advertisementcorridor"
+    t.integer "distancetorow"
+    t.integer "estimatedheight"
+    t.integer "latitude"
+    t.integer "longitude"
+  end
 
   create_table "denton_demographics", force: :cascade do |t|
     t.integer "_id"
@@ -30,6 +56,21 @@ ActiveRecord::Schema.define(version: 20170303033131) do
     t.integer "owner_occupied"
     t.integer "median_gross_rent"
     t.integer "renter_occupied"
+  end
+
+  create_table "schools", force: :cascade do |t|
+    t.integer "_id"
+    t.integer "objectid"
+    t.integer "gis_nr_sde_schools_area"
+    t.integer "perimeter"
+    t.integer "poi_"
+    t.integer "poi_id"
+    t.integer "symbol"
+    t.string  "school"
+    t.string  "address"
+    t.string  "type_of_school"
+    t.integer "shapearea"
+    t.integer "shapelen"
   end
 
   create_table "well_inspections", force: :cascade do |t|

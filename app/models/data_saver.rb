@@ -15,9 +15,8 @@ class DataSaver
     load File.join( File.dirname(__FILE__), "#{table_name.singularize}.rb")
     class_name = table_name.classify.constantize
     results = DataImporter.get_all(resource_id)
-    binding.pry
     results.each do |result|
-      result = class_name.send(:clean_data, results)
+      result = class_name.send(:clean_data, result)
       class_name.create(result)
     end
     nil
