@@ -16,7 +16,6 @@ class FileGenerator
   }
 
 
-
   def self.generate_json(data)
     file_name = DATA_DIR + '/temp_data_' + self.current_time + '.json'
     File.open(file_name, 'w+') { |f| f.write JSON.pretty_generate(data) }
@@ -46,17 +45,14 @@ class FileGenerator
   end
 
   def self.generate_resource(resource_id, table_name)
-    # self.generate_model(resource_id, table_name)
     system('rake db:migrate')
     self.insert_routes(table_name)
   end
 
   def self.generate_model(resource_id, table_name)
-    # if system('rake db:migrate')
-      model_file = File.open("#{MODEL_DIR}/#{table_name.singularize}.rb", "w")
-      model_file << model_file_template(resource_id, table_name)
-      model_file.close
-    # end
+    model_file = File.open("#{MODEL_DIR}/#{table_name.singularize}.rb", "w")
+    model_file << model_file_template(resource_id, table_name)
+    model_file.close
   end
 
   def self.insert_routes(table_name)

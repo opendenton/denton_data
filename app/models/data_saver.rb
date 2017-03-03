@@ -3,7 +3,6 @@ require 'sinatra/activerecord'
 require 'active_support/all'
 require_relative './data_importer'
 require_relative './file_generator'
-Dir["./*.rb"].each {|file| require file }
 
 class DataSaver
 
@@ -16,9 +15,9 @@ class DataSaver
     load File.join( File.dirname(__FILE__), "#{table_name.singularize}.rb")
     class_name = table_name.classify.constantize
     results = DataImporter.get_all(resource_id)
-    # binding.pry
+    binding.pry
     results.each do |result|
-      result = class_name.clean_data(result)
+      result = class_name.send(:clean_data, results)
       class_name.create(result)
     end
     nil

@@ -1,10 +1,8 @@
 require 'json'
 require 'sinatra'
 require "sinatra/activerecord"
-require_relative './models/denton_houses'
-require_relative './models/well_inspection'
-require_relative './models/data_saver'
-require_relative './models/import_denton_housing'
+
+Dir["./app/models/*.rb"].each { |file| puts require file }
 
 configure :production do
   ActiveRecord::Base.establish_connection(ENV['DATABASE_URL'])
