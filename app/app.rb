@@ -20,7 +20,7 @@ end
 ###############################################
 
 get '/import-data' do
-	DentonDemographic.import
+  DentonDemographic.import
   WellInspection.import
   ImportDentonHouse.import_housing
 end
@@ -30,7 +30,7 @@ end
 ###################
 
 get '/delete-data' do
-	DentonDemographic.delete_all
+  DentonDemographic.delete_all
   WellInspection.delete_all
   DentonHouse.delete_all
 end

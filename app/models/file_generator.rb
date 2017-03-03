@@ -7,6 +7,15 @@ class FileGenerator
   DATA_DIR = File.join(File.dirname(__FILE__), './../../data')
   APP_DIR = File.join(File.dirname(__FILE__), './../../app')
   APP_PATH = File.join(File.dirname(__FILE__), './../../app/app.rb')
+  # As more datatypes are encountered, add to this hash
+  FIELDS_MAP = {
+    "int4": "integer",
+    "numeric": "integer",
+    "text": "string",
+    "timestamp": "datetime"
+  }
+
+
 
   def self.generate_json(data)
     file_name = DATA_DIR + '/temp_data_' + self.current_time + '.json'
@@ -37,23 +46,42 @@ class FileGenerator
   end
 
   def self.generate_resource(resource_id, table_name)
-    self.generate_model(resource_id, table_name)
+    # self.generate_model(resource_id, table_name)
+    system('rake db:migrate')
     self.insert_routes(table_name)
   end
 
   def self.generate_model(resource_id, table_name)
-    if system('rake db:migrate')
+    # if system('rake db:migrate')
       model_file = File.open("#{MODEL_DIR}/#{table_name.singularize}.rb", "w")
       model_file << model_file_template(resource_id, table_name)
       model_file.close
-    end
+    # end
   end
 
   def self.insert_routes(table_name)
     self.insert_import_and_delete(table_name)
   end
 
+  def self.generate_initial(resource_id, table_name, result)
+    self.generate_json(result)
+
+    attributes = self.parse_attributes(result['fields'])
+    self.generate_migration(table_name, attributes)
+    self.generate_model(resource_id, table_name)
+  end
+
   private
+
+    def self.parse_attributes(fields)
+      attributes = {}
+      fields.each do |field|
+        attr_name = field["id"].downcase
+        data_type = FIELDS_MAP[field["type"].to_sym]
+        attributes[attr_name] = data_type
+      end
+      attributes
+    end
 
     def self.current_time
       timestamp = Time.now.strftime('%s')
@@ -66,6 +94,11 @@ class FileGenerator
           RESOURCE_ID = "#{resource_id}"
           def self.import
             DataSaver.save_resources(RESOURCE_ID, "#{table_name}")
+          end
+
+          def self.clean_data(data)
+            # 
+            data
           end
 
         end
