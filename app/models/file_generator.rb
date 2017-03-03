@@ -14,10 +14,9 @@ class FileGenerator
   end
 
   def self.generate_migration(table_name, attributes)
-    class_name = table_name.classify
-    system("rake db:create_migration NAME=create_#{class_name}")
+    system("rake db:create_migration NAME=create_#{table_name}")
     
-    migration_file = Dir["#{MIGRATION_DIR}/*.rb"].select { |f| f =~ /#{class_name}/i }[0]
+    migration_file = Dir["#{MIGRATION_DIR}/*.rb"].select { |f| f =~ /#{table_name}/i }[0]
     tempfile = File.open("#{MIGRATION_DIR}/file.tmp", "w")
     original = File.new(migration_file)
 

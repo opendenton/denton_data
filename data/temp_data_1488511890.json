@@ -1,0 +1,179 @@
+{
+  "resource_id": "dbbec00e-87cc-4f9e-b029-97c161b08f60",
+  "fields": [
+    {
+      "type": "int4",
+      "id": "_id"
+    },
+    {
+      "type": "numeric",
+      "id": "year"
+    },
+    {
+      "type": "text",
+      "id": "title_field"
+    },
+    {
+      "type": "numeric",
+      "id": "value"
+    }
+  ],
+  "records": [
+    {
+      "_id": 1,
+      "title_field": "Total Population",
+      "value": "128200",
+      "year": "2014"
+    },
+    {
+      "_id": 2,
+      "title_field": "Male Population",
+      "value": "63524",
+      "year": "2014"
+    },
+    {
+      "_id": 3,
+      "title_field": "Male Under 5 years",
+      "value": "4082",
+      "year": "2014"
+    },
+    {
+      "_id": 4,
+      "title_field": "Male 5 to 9 years",
+      "value": "3466",
+      "year": "2014"
+    },
+    {
+      "_id": 5,
+      "title_field": "Male 10 to 14 years",
+      "value": "3347",
+      "year": "2014"
+    },
+    {
+      "_id": 6,
+      "title_field": "Male 15 to 17 years",
+      "value": "1795",
+      "year": "2014"
+    },
+    {
+      "_id": 7,
+      "title_field": "Male 18 and 19 years",
+      "value": "3465",
+      "year": "2014"
+    },
+    {
+      "_id": 8,
+      "title_field": "Male 20 years",
+      "value": "2010",
+      "year": "2014"
+    },
+    {
+      "_id": 9,
+      "title_field": "Male 21 years",
+      "value": "1888",
+      "year": "2014"
+    },
+    {
+      "_id": 10,
+      "title_field": "Male 22 to 24 years",
+      "value": "5838",
+      "year": "2014"
+    },
+    {
+      "_id": 11,
+      "title_field": "Male 25 to 29 years",
+      "value": "7862",
+      "year": "2014"
+    },
+    {
+      "_id": 12,
+      "title_field": "Male 30 to 34 years",
+      "value": "5282",
+      "year": "2014"
+    },
+    {
+      "_id": 13,
+      "title_field": "Male 35 to 39 years",
+      "value": "4971",
+      "year": "2014"
+    },
+    {
+      "_id": 14,
+      "title_field": "Male 40 to 44 years",
+      "value": "4205",
+      "year": "2014"
+    },
+    {
+      "_id": 15,
+      "title_field": "Male 45 to 49 years",
+      "value": "2974",
+      "year": "2014"
+    },
+    {
+      "_id": 16,
+      "title_field": "Male 50 to 54 years",
+      "value": "2261",
+      "year": "2014"
+    },
+    {
+      "_id": 17,
+      "title_field": "Male 55 to 59 years",
+      "value": "2304",
+      "year": "2014"
+    },
+    {
+      "_id": 18,
+      "title_field": "Male 60 and 61 years",
+      "value": "1256",
+      "year": "2014"
+    },
+    {
+      "_id": 19,
+      "title_field": "Male 62 to 64 years",
+      "value": "1291",
+      "year": "2014"
+    },
+    {
+      "_id": 20,
+      "title_field": "Male 65 and 66 years",
+      "value": "1547",
+      "year": "2014"
+    },
+    {
+      "_id": 21,
+      "title_field": "Male 67 to 69 years",
+      "value": "1013",
+      "year": "2014"
+    },
+    {
+      "_id": 22,
+      "title_field": "Male 70 to 74 years",
+      "value": "1373",
+      "year": "2014"
+    },
+    {
+      "_id": 23,
+      "title_field": "Male 75 to 79 years",
+      "value": "725",
+      "year": "2014"
+    },
+    {
+      "_id": 24,
+      "title_field": "Male 80 to 84 years",
+      "value": "407",
+      "year": "2014"
+    },
+    {
+      "_id": 25,
+      "title_field": "Male 85 years and over",
+      "value": "162",
+      "year": "2014"
+    }
+  ],
+  "_links": {
+    "start": "/api/action/datastore_search?limit=25&resource_id=dbbec00e-87cc-4f9e-b029-97c161b08f60",
+    "next": "/api/action/datastore_search?offset=25&limit=25&resource_id=dbbec00e-87cc-4f9e-b029-97c161b08f60"
+  },
+  "limit": 25,
+  "total": 672
+}
