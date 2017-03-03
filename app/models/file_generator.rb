@@ -35,10 +35,10 @@ class FileGenerator
     FileUtils.mv "#{MIGRATION_DIR}/file.tmp", migration_file
   end
 
-  def self.generate_model(table_name)
+  def self.generate_model(resource_id, table_name)
     if system('rake db:migrate')
       model_file = File.open("#{MODEL_DIR}/#{table_name.singularize}.rb", "w")
-      model_file << model_file_template(table_name)
+      model_file << model_file_template(resource_id, table_name)
       model_file.close
     end
   end
@@ -49,8 +49,16 @@ class FileGenerator
       timestamp = Time.now.strftime('%s')
     end
 
-    def self.model_file_template(table_name)
-      "class #{ table_name.classify } < ActiveRecord::Base\nend"
+    def self.model_file_template(resource_id, table_name)
+      <<-MODEL.strip_heredoc
+        class #{ table_name.classify } < ActiveRecord::Base
+          RESOURCE_ID = "#{resource_id}"
+          def self.import
+            DataSaver.save_resources(RESOURCE_ID, "#{table_name}")
+          end
+
+        end
+        MODEL
     end
 
 end
