@@ -3,7 +3,8 @@ require 'active_support/all'
 
 class FileGenerator
   MIGRATION_DIR = File.join( File.dirname(__FILE__), "./../../db/migrate")
-  DATA_DIR = File.join(File.dirname(__FILE__), '../../data')
+  MODEL_DIR = File.join(File.dirname(__FILE__), './../../app/models')
+  DATA_DIR = File.join(File.dirname(__FILE__), './../../data')
 
   def self.generate_json(data)
     file_name = DATA_DIR + '/temp_data_' + self.current_time + '.json'
@@ -34,10 +35,22 @@ class FileGenerator
     FileUtils.mv "#{MIGRATION_DIR}/file.tmp", migration_file
   end
 
+  def self.generate_model(table_name)
+    if system('rake db:migrate')
+      model_file = File.open("#{MODEL_DIR}/#{table_name.singularize}.rb", "w")
+      model_file << model_file_template(table_name)
+      model_file.close
+    end
+  end
+
   private
 
     def self.current_time
       timestamp = Time.now.strftime('%s')
+    end
+
+    def self.model_file_template(table_name)
+      "class #{ table_name.classify } < ActiveRecord::Base\nend"
     end
 
 end

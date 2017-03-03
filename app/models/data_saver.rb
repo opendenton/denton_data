@@ -1,9 +1,7 @@
 require 'pg'
 require 'sinatra/activerecord'
 require 'active_support/all'
-require 'pry'
 require_relative './data_importer'
-require_relative './well_inspection'
 require_relative './file_generator'
 
 class DataSaver
@@ -14,6 +12,11 @@ class DataSaver
     "text": "string",
     "timestamp": "datetime"
   }
+
+  def self.save_all(resource_id, table_name)
+    FileGenerator.generate_model(table_name)
+    self.save_resources(resource_id, table_name)
+  end
 
   def self.save_resources(resource_id, table_name)
     class_name = table_name.classify.constantize
