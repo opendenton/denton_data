@@ -14,7 +14,7 @@ class DataSaver
   }
 
   def self.save_all(resource_id, table_name)
-    FileGenerator.generate_model(table_name)
+    FileGenerator.generate_resource(resource_id, table_name)
     self.save_resources(resource_id, table_name)
   end
 
