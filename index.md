@@ -5,8 +5,6 @@ and will be updated as we add more. If there's a dataset you'd like added, pleas
 reach out to us on Slack via the `#opendenton-api` channel. Or, just come stick
 your head into the front conference room.
 
-Yay Open Data!!
-
 If you need help, or want to install the application locally, see [the readme]
 on our GitHub repository.
 
@@ -14,6 +12,10 @@ on our GitHub repository.
 
 All endpoints are assuming a request of the type `GET`.
 
+
+## API Base: [https://dentondata.herokuapp.com/](https://dentondata.herokuapp.com/)
+
+The following routes are available:
 
 ---
 
