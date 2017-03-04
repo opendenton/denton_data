@@ -1,15 +1,126 @@
 ---
 layout: page
-title: About
-permalink: /about/
+title: CSVs
+permalink: /csv/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](http://jekyllrb.com/)
 
-You can find the source code for the Jekyll new theme at:
-{% include icon-github.html username="jekyll" %} /
-[minima](https://github.com/jekyll/minima)
-
-You can find the source code for Jekyll at
-{% include icon-github.html username="jekyll" %} /
-[jekyll](https://github.com/jekyll/jekyll)
+- barnettshale: http://data-dentontxgis.opendata.arcgis.com/datasets/c944cba2ac6849d9ad69f506d319e67f_0.csv
+- barnettshale-cities-15miles: http://data-dentontxgis.opendata.arcgis.com/datasets/c944cba2ac6849d9ad69f506d319e67f_1.csv
+- billboards-denton: http://data-dentontxgis.opendata.arcgis.com/datasets/d61bd85f7ddb440b8432820ab86cd7f2_0.csv
+- buildings-1200: http://data-dentontxgis.opendata.arcgis.com/datasets/f77afc2ec0f345a7809452cb6ab69980_7.csv
+- buildings-2400: http://data-dentontxgis.opendata.arcgis.com/datasets/f77afc2ec0f345a7809452cb6ab69980_13.csv
+- buildings-4800: http://data-dentontxgis.opendata.arcgis.com/datasets/f77afc2ec0f345a7809452cb6ab69980_19.csv
+- buildings-new: http://data-dentontxgis.opendata.arcgis.com/datasets/2563d4c3dd94485ba0344c5901a4f06c_0.csv
+- censusblockgroups-tree: http://data-dentontxgis.opendata.arcgis.com/datasets/c8a725110212493da7904e6e5b1900ba_0.csv
+- centerline: http://data-dentontxgis.opendata.arcgis.com/datasets/525cad864ef149c9955ea342a48a7d4e_0.csv
+- cis-code-violations: http://data.cityofdenton.com/dataset/e264ebe4-a0b5-4ab0-bd0b-e3be6be71406/resource/82f6efd5-366e-4901-a0e3-6fd59eeda5cf/download/trakitciscodeviol.csv
+- city-addresses: http://data-dentontxgis.opendata.arcgis.com/datasets/19b0f76fe6184be089a79a64135823db_0.csv
+- city-limit: http://data-dentontxgis.opendata.arcgis.com/datasets/f77afc2ec0f345a7809452cb6ab69980_35.csv
+- citylimits: http://data-dentontxgis.opendata.arcgis.com/datasets/45da62fbc75246188cb9b23cc4a38a81_0.csv
+- city-limits-tree: http://data-dentontxgis.opendata.arcgis.com/datasets/883fed9f5f2a4d57bdf06b7da10f115e_0.csv
+- city-of-denton-operating-budget: http://data.cityofdenton.com/dataset/935ec670-3c6b-43c0-ae03-748247a57232/resource/283f49d0-9e9a-4c5c-bb51-046b0a8a890c/download/fy2016-2017-cityofdentonoperatingbudget.csv
+- city-of-denton-operating-budget: http://data.cityofdenton.com/dataset/935ec670-3c6b-43c0-ae03-748247a57232/resource/b64fb94a-c72b-4448-a92b-f445325c89b7/download/fy2015-2016-cityofdentonoperatingbudget.csv
+- clustered-dwellings: http://data-dentontxgis.opendata.arcgis.com/datasets/60bf626722c14401b9b6ac4cca72cbd4_0.csv
+- codgis-gisadm-connectivity-east: http://data-dentontxgis.opendata.arcgis.com/datasets/2bcd6be12e464c8d87d788a0cb3785f9_2.csv
+- codgis-gisadm-connectivity-grid: http://data-dentontxgis.opendata.arcgis.com/datasets/2bcd6be12e464c8d87d788a0cb3785f9_1.csv
+- codgis-gisadm-connectivity-west: http://data-dentontxgis.opendata.arcgis.com/datasets/2bcd6be12e464c8d87d788a0cb3785f9_0.csv
+- codgis-gisadm-dcta-trainstations: http://data-dentontxgis.opendata.arcgis.com/datasets/ed4ab92d0a13478a8cabad7907632eac_0.csv
+- codgis-gisadm-existing-not-to-standards: http://data-dentontxgis.opendata.arcgis.com/datasets/2bcd6be12e464c8d87d788a0cb3785f9_4.csv
+- codgis-gisadm-future-areas: http://data-dentontxgis.opendata.arcgis.com/datasets/2bcd6be12e464c8d87d788a0cb3785f9_5.csv
+- codgis-gisadm-trailnetwork: http://data-dentontxgis.opendata.arcgis.com/datasets/ed4ab92d0a13478a8cabad7907632eac_1.csv
+- codgis-gisadm-txdot-maintain: http://data-dentontxgis.opendata.arcgis.com/datasets/2bcd6be12e464c8d87d788a0cb3785f9_6.csv
+- community-development-maintenance: http://data-dentontxgis.opendata.arcgis.com/datasets/fcdc95d116c44587bb835bf3bbdfd56f_0.csv
+- community-development-minor-repairs: http://data-dentontxgis.opendata.arcgis.com/datasets/6141516f3b0f49ec924a201bd6467dc4_0.csv
+- contours-2-ft: http://data-dentontxgis.opendata.arcgis.com/datasets/93d15b4bd9d0466e8cf4ed314b43b6c8_0.csv
+- contours-4-ft: http://data-dentontxgis.opendata.arcgis.com/datasets/53b740dd8de241b4bf6a9b32b0cfa673_0.csv
+- county: http://data-dentontxgis.opendata.arcgis.com/datasets/f77afc2ec0f345a7809452cb6ab69980_1.csv
+- county-parcels: http://data-dentontxgis.opendata.arcgis.com/datasets/39888dad239f4ae69796564ae21b5649_0.csv
+- county-parcels-2014-certified: http://data-dentontxgis.opendata.arcgis.com/datasets/43267b99a0e54ff7b8d098a3572cb2da_0.csv
+- county-roads: http://data-dentontxgis.opendata.arcgis.com/datasets/97a70dcf55234cee91c046c9c0c918fa_0.csv
+- crime-dataset: http://data.cityofdenton.com/dataset/17695047-0aeb-46a2-a9db-66847743ed1c/resource/d356a409-6764-46d7-942d-4d5a7ffb1c28/download/crimedata20170303.csv
+- current-landuse: http://data-dentontxgis.opendata.arcgis.com/datasets/5de9f033a67f49b096c799fc284dbfa0_0.csv
+- current-zoning: http://data-dentontxgis.opendata.arcgis.com/datasets/324ded7163054fcf86ff46652d79b7a7_0.csv
+- denton-5-mile-etj: http://data-dentontxgis.opendata.arcgis.com/datasets/a4ab940267724d2dbd06194b8d6701d9_4.csv
+- denton-tx-demographic-data: http://data.cityofdenton.com/dataset/a814a8b6-7b82-41e8-b0db-c07af2fbbf59/resource/dbbec00e-87cc-4f9e-b029-97c161b08f60/download/5ab1de1b-bcd2-43a2-accd-506ccef43cfcdentontxdemographic.csv
+- denton-tx-economic-data: http://data.cityofdenton.com/dataset/c5b19356-b4c9-4332-9e63-29b3387ad324/resource/bc4b4f54-ec69-4620-95ee-773d75f5460f/download/2649156c-1f47-4847-a2c2-1f99a27476b7dentontxeconomic.csv
+- denton-tx-housing-data: http://data.cityofdenton.com/dataset/88f51deb-ed87-46ae-a112-642375109c6a/resource/815db0db-9e6e-4c08-b516-80b9a2539142/download/5ef33a46-5f41-4c3e-ab5a-eb4a5163e5e3dentontxhousing.csv
+- denton-tx-unemployment-rate: http://data.cityofdenton.com/dataset/830643ad-1bba-4155-9a60-ed539bb4946a/resource/5980ea98-ce00-4f7d-9ee3-114006f78f59/download/f714da52-2cba-461c-b9ea-e78217a7046cdentontxunemployment.csv
+- drainage-channels: http://data-dentontxgis.opendata.arcgis.com/datasets/2aac3eac0ad2465bafa9ba27ee697f97_0.csv
+- drainage-streams: http://data-dentontxgis.opendata.arcgis.com/datasets/59d1dfcaa0ec41d5ad1f34c30bdab5cb_0.csv
+- dsc-listing: http://data.cityofdenton.com/dataset/1aa90e12-34b0-43e7-b0ea-3a69fd916fba/resource/bc5af25c-ed44-4da1-ba54-8b6fe9550be4/download/dsc-list201702.csv
+- easement-data: http://data-dentontxgis.opendata.arcgis.com/datasets/9314c5f5c44e410692aa2a630171c953_0.csv
+- elections: http://data-dentontxgis.opendata.arcgis.com/datasets/b2f36a7d75d746acba13266d80c3e674_0.csv
+- esa-floodplain: http://data-dentontxgis.opendata.arcgis.com/datasets/8b3f6ecc7351432485caa511b9a6db70_0.csv
+- esa-habitat: http://data-dentontxgis.opendata.arcgis.com/datasets/d288156c36744e53b1f25607de3b3abb_0.csv
+- esa-prairie: http://data-dentontxgis.opendata.arcgis.com/datasets/5669fd856563434b90e3b843568625f9_0.csv
+- esa-streambuffers: http://data-dentontxgis.opendata.arcgis.com/datasets/c06d095a996e4432bd449915ffb55b58_0.csv
+- etj: http://data-dentontxgis.opendata.arcgis.com/datasets/faa250e4f0da4f579ac8d08dd6d8bf16_0.csv
+- etj-denton-tree: http://data-dentontxgis.opendata.arcgis.com/datasets/79aefd195be3446ab042a0501b5b8d32_0.csv
+- etj-regulatory: http://data-dentontxgis.opendata.arcgis.com/datasets/f77afc2ec0f345a7809452cb6ab69980_0.csv
+- fema-flood-hazard-zones: http://data-dentontxgis.opendata.arcgis.com/datasets/ea469ecd648645b8827cac05b56855ee_0.csv
+- futurelanduse2: http://data-dentontxgis.opendata.arcgis.com/datasets/52cc25a66209443d90d621cf66c5663e_0.csv
+- gas-wells-inspections-layer: http://data-dentontxgis.opendata.arcgis.com/datasets/086bafb77f2c40f9a398e8bd7c26ea92_0.csv
+- gas-wells-plats: http://data-dentontxgis.opendata.arcgis.com/datasets/a4ab940267724d2dbd06194b8d6701d9_1.csv
+- gps-monuments-benchmarks: http://data-dentontxgis.opendata.arcgis.com/datasets/f986891c52e84feeb0f533479b609cec_0.csv
+- grids: http://data-dentontxgis.opendata.arcgis.com/datasets/a4ab940267724d2dbd06194b8d6701d9_2.csv
+- human-cases-2016: http://data-dentontxgis.opendata.arcgis.com/datasets/610fd7c18cd34cb1b0b1499cb1a752e9_0.csv
+- hydrolines-1200: http://data-dentontxgis.opendata.arcgis.com/datasets/f77afc2ec0f345a7809452cb6ab69980_6.csv
+- hydrolines-18k: http://data-dentontxgis.opendata.arcgis.com/datasets/f77afc2ec0f345a7809452cb6ab69980_29.csv
+- hydrolines-2400: http://data-dentontxgis.opendata.arcgis.com/datasets/f77afc2ec0f345a7809452cb6ab69980_12.csv
+- hydrolines-36k: http://data-dentontxgis.opendata.arcgis.com/datasets/f77afc2ec0f345a7809452cb6ab69980_33.csv
+- hydrolines-4800: http://data-dentontxgis.opendata.arcgis.com/datasets/f77afc2ec0f345a7809452cb6ab69980_18.csv
+- hydrolines-72k: http://data-dentontxgis.opendata.arcgis.com/datasets/f77afc2ec0f345a7809452cb6ab69980_38.csv
+- hydrolines-9600: http://data-dentontxgis.opendata.arcgis.com/datasets/f77afc2ec0f345a7809452cb6ab69980_24.csv
+- land: http://data-dentontxgis.opendata.arcgis.com/datasets/f77afc2ec0f345a7809452cb6ab69980_41.csv
+- landuse-tree: http://data-dentontxgis.opendata.arcgis.com/datasets/687b32f8acb441db9a9623e951d0525f_0.csv
+- major-points-of-interest: http://data-dentontxgis.opendata.arcgis.com/datasets/4194eb57120a4af493b536e606eef368_0.csv
+- mosquito-spraying-2016: http://data-dentontxgis.opendata.arcgis.com/datasets/0b79afa3f21c4234b527447a622857cc_0.csv
+- mosquito-traps-2016: http://data-dentontxgis.opendata.arcgis.com/datasets/a75d2202f0994960ba9f63f03ddfa4d2_0.csv
+- parcels: http://data-dentontxgis.opendata.arcgis.com/datasets/4a3db1beb91a4db4a86f9bbd8aef69d7_0.csv
+- parcels-tree: http://data-dentontxgis.opendata.arcgis.com/datasets/f378a759c63e4128ab0bf40b3905a477_0.csv
+- parks-and-preserves-1200: http://data-dentontxgis.opendata.arcgis.com/datasets/f77afc2ec0f345a7809452cb6ab69980_9.csv
+- parks-and-preserves-18k: http://data-dentontxgis.opendata.arcgis.com/datasets/f77afc2ec0f345a7809452cb6ab69980_30.csv
+- parks-and-preserves-2400: http://data-dentontxgis.opendata.arcgis.com/datasets/f77afc2ec0f345a7809452cb6ab69980_15.csv
+- parks-and-preserves-36k: http://data-dentontxgis.opendata.arcgis.com/datasets/f77afc2ec0f345a7809452cb6ab69980_34.csv
+- parks-and-preserves-4800: http://data-dentontxgis.opendata.arcgis.com/datasets/f77afc2ec0f345a7809452cb6ab69980_21.csv
+- parks-and-preserves-72k: http://data-dentontxgis.opendata.arcgis.com/datasets/f77afc2ec0f345a7809452cb6ab69980_39.csv
+- parks-and-preserves-9600: http://data-dentontxgis.opendata.arcgis.com/datasets/f77afc2ec0f345a7809452cb6ab69980_26.csv
+- pavement-data: http://data-dentontxgis.opendata.arcgis.com/datasets/f9ab71a7c10b45dc97249783beeedeb7_0.csv
+- point-in-time-home-count-denton-county: http://data.cityofdenton.com/dataset/0dd6bc32-9e65-4242-a8ba-3400eff18df8/resource/d9956b77-684e-45b0-bb53-8ed5be022b5e/download/0cccf9e0-a099-4020-84f4-9989038ebf7atabularhomelesssurvey.csv
+- railroad: http://data-dentontxgis.opendata.arcgis.com/datasets/f77afc2ec0f345a7809452cb6ab69980_2.csv
+- recent-annexations: http://data-dentontxgis.opendata.arcgis.com/datasets/9d02004ebf954722b1dd1949e4271fc2_0.csv
+- regulatory: http://data-dentontxgis.opendata.arcgis.com/datasets/a4ab940267724d2dbd06194b8d6701d9_3.csv
+- regulatory1: http://data-dentontxgis.opendata.arcgis.com/datasets/15b5d385a6dd42d7abcf6a8da5f2dab4_0.csv
+- schools-1200: http://data-dentontxgis.opendata.arcgis.com/datasets/f77afc2ec0f345a7809452cb6ab69980_8.csv
+- schools-2400: http://data-dentontxgis.opendata.arcgis.com/datasets/f77afc2ec0f345a7809452cb6ab69980_14.csv
+- schools-4800: http://data-dentontxgis.opendata.arcgis.com/datasets/f77afc2ec0f345a7809452cb6ab69980_20.csv
+- schools-9600: http://data-dentontxgis.opendata.arcgis.com/datasets/f77afc2ec0f345a7809452cb6ab69980_25.csv
+- sewer-gravity-main: http://data-dentontxgis.opendata.arcgis.com/datasets/6cc82ade90a44b20a0218454144fbbb2_0.csv
+- sewer-pressurized-main: http://data-dentontxgis.opendata.arcgis.com/datasets/f2e58c7ccc64427ebcfe15e72a58be0f_0.csv
+- sgravitymain-sde: http://data-dentontxgis.opendata.arcgis.com/datasets/4391b29d4d544ee3be8e72c2c7581d95_0.csv
+- signs-active: http://data-dentontxgis.opendata.arcgis.com/datasets/5d9c676c5bfa42f29c31b338ea2c15de_0.csv
+- storm-node-master: http://data-dentontxgis.opendata.arcgis.com/datasets/f6c78c5775c74e56938971cb92e82d2f_0.csv
+- storm-pipe-master: http://data-dentontxgis.opendata.arcgis.com/datasets/ae1d16d5bad648c3b7a103e567093ebf_0.csv
+- strategic-performance-measures: http://data.cityofdenton.com/dataset/58f2395c-56c0-46b4-a56b-c54e485ce36d/resource/b63de900-5dd9-467d-9615-a514c61b2a72/download/misckfatracking-unpivot.csv
+- streets-18k: http://data-dentontxgis.opendata.arcgis.com/datasets/f77afc2ec0f345a7809452cb6ab69980_28.csv
+- streets-2400: http://data-dentontxgis.opendata.arcgis.com/datasets/f77afc2ec0f345a7809452cb6ab69980_11.csv
+- streets-24001: http://data-dentontxgis.opendata.arcgis.com/datasets/f77afc2ec0f345a7809452cb6ab69980_5.csv
+- streets-36k: http://data-dentontxgis.opendata.arcgis.com/datasets/f77afc2ec0f345a7809452cb6ab69980_32.csv
+- streets-4800: http://data-dentontxgis.opendata.arcgis.com/datasets/f77afc2ec0f345a7809452cb6ab69980_17.csv
+- streets-72k: http://data-dentontxgis.opendata.arcgis.com/datasets/f77afc2ec0f345a7809452cb6ab69980_37.csv
+- streets-9600: http://data-dentontxgis.opendata.arcgis.com/datasets/f77afc2ec0f345a7809452cb6ab69980_23.csv
+- subdivisions-city: http://data-dentontxgis.opendata.arcgis.com/datasets/f644c4c0a9024674bb37eeab484c3bac_0.csv
+- subdivisions-county: http://data-dentontxgis.opendata.arcgis.com/datasets/e0132c224f6a4c53bb782514587e9cdc_0.csv
+- subdivision-variance: http://data-dentontxgis.opendata.arcgis.com/datasets/cd2e47d87927450088948ea0e01a22d2_0.csv
+- trafficsignals-active: http://data-dentontxgis.opendata.arcgis.com/datasets/1017b7ab5f4449228086cbc27f00fc5d_0.csv
+- traffic-violations: http://data.cityofdenton.com/dataset/928d63c1-a653-42f4-b801-c092766328e8/resource/f65ca91f-010d-4b08-a0a1-8bbe3a8849d1/download/trafficviolatioins201702.csv
+- vacant-lots: http://data-dentontxgis.opendata.arcgis.com/datasets/2c5c64203a2c46bea71d96a95f7fdbfc_0.csv
+- voter-districts: http://data-dentontxgis.opendata.arcgis.com/datasets/ec1b1e9fe544458bb55e63e668361137_0.csv
+- voterdistricts-tree: http://data-dentontxgis.opendata.arcgis.com/datasets/407ec14ae32647b48308ee9d4c59b393_0.csv
+- waterbodies: http://data-dentontxgis.opendata.arcgis.com/datasets/f77afc2ec0f345a7809452cb6ab69980_3.csv
+- water-gravity-main: http://data-dentontxgis.opendata.arcgis.com/datasets/f390ae2d77a94cf4a8c0f7eea747ef0e_0.csv
+- water-pressurized-main: http://data-dentontxgis.opendata.arcgis.com/datasets/bf8cf389263f4ff799139bc08cb03bdf_0.csv
+- well-status-project: http://data-dentontxgis.opendata.arcgis.com/datasets/a4ab940267724d2dbd06194b8d6701d9_0.csv
+- zbalayer: http://data-dentontxgis.opendata.arcgis.com/datasets/38183060c987418bbdd552f2e3f1b76e_0.csv
+- zipcodes-canopychange-tree: http://data-dentontxgis.opendata.arcgis.com/datasets/cd9d0eacbebf48ffb95257bff736dd84_0.csv
