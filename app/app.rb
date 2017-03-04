@@ -4,7 +4,7 @@ require "sinatra/activerecord"
 Dir["./app/models/*.rb"].each { |file| require file }
 
 configure :production do
-  ActiveRecord::Base.establish_connection(ENV['DATABASE_URL'])
+  ActiveRecord::Base.establish_connection(ENV['HEROKU_POSTGRESQL_PUCE_URL'])
 end
 
 configure :development do
