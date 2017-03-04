@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Welcome to Jekyll!"
+title:  "How to create a Jekyll post"
 date:   2017-03-03 19:30:10 -0600
 categories: jekyll update
 ---
