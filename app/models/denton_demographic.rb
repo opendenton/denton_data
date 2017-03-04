@@ -5,4 +5,8 @@ class DentonDemographic < ActiveRecord::Base
     DataSaver.save_resources(RESOURCE_ID, "denton_demographics")
   end
 
+  def self.clean_data(data)
+    data
+  end
+
 end

@@ -5,4 +5,8 @@ class Hash
     end
     self
   end
+
+  def self.clean_data(data)
+    data
+  end
 end

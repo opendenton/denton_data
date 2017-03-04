@@ -12,6 +12,10 @@ configure :development do
   set :database_file, "../config/database.yml"
 end
 
+after do
+ ActiveRecord::Base.clear_active_connections!
+end
+
 ###############################################
 # Import all data
 # - Add additional import methods to this route

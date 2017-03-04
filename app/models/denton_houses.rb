@@ -14,4 +14,8 @@ class DentonHouse < ActiveRecord::Base
     return unless year
     where(year: year).map(&:vacant_housing_units)
   end
+
+  def self.clean_data(data)
+    data
+  end
 end
