@@ -2,7 +2,7 @@ require 'json'
 require 'httparty'
 require 'ap'
 require_relative './hash'
-require_relative './data_saver'
+require_relative './file_generator'
 
 class DataImporter
   TLD = "http://data.cityofdenton.com/api/action"
@@ -18,8 +18,7 @@ class DataImporter
   def self.get_sampling(resource_id, table_name, limit=25)
     response = fetch(resource_id, limit)
     result = response['result']
-    ap result
-    DataSaver.save_sample_data(result, table_name)
+    FileGenerator.generate_initial(resource_id, table_name, result)
   end
 
   def self.get_all(resource_id)

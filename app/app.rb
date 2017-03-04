@@ -1,12 +1,7 @@
 require 'json'
 require 'sinatra'
 require "sinatra/activerecord"
-require_relative './models/denton_houses'
-require_relative './models/well_inspection'
-require_relative './models/data_saver'
-require_relative './models/demographics'
-require_relative './models/economics'
-require_relative './models/homelessness_survey'
+Dir["./app/models/*.rb"].each { |file| require file }
 
 configure :production do
   ActiveRecord::Base.establish_connection(ENV['DATABASE_URL'])
@@ -26,6 +21,9 @@ end
 ###############################################
 
 get '/import-data' do
+  Billboard.import
+  School.import
+  DentonDemographic.import
   WellInspection.import
   DentonHouse.import
   HomelessnessSurvey.import
@@ -38,6 +36,9 @@ end
 ###################
 
 get '/delete-data' do
+  Billboard.delete_all
+  School.delete_all
+  DentonDemographic.delete_all
   WellInspection.delete_all
   DentonHouse.delete_all
   HomelessnessSurvey.destroy_all
@@ -51,8 +52,6 @@ end
 
 get '/denton-housing' do
   DentonHouse.get_housing.to_json
-
-  #puts JSON.pretty_generate(DentonHouse.get_housing)
 end
 
 get '/total-housing-units' do
@@ -114,3 +113,4 @@ get '/economics' do
     record.attributes.except('id')
   end.to_json
 end
+

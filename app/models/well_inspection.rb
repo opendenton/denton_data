@@ -4,4 +4,8 @@ class WellInspection < ActiveRecord::Base
   def self.import
     DataSaver.save_resources(RESOURCE_ID, 'well_inspections')
   end
+
+  def self.clean_data(data)
+    data
+  end
 end

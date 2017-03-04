@@ -2,24 +2,22 @@ require 'pg'
 require 'sinatra/activerecord'
 require 'active_support/all'
 require_relative './data_importer'
-require_relative './well_inspection'
 require_relative './file_generator'
 
 class DataSaver
-  # As more datatypes are encountered, add to this hash
-  FIELDS_MAP = {
-    "int4": "integer",
-    "numeric": "integer",
-    "text": "string",
-    "timestamp": "datetime"
-  }
+
+  def self.save_all(resource_id, table_name)
+    FileGenerator.generate_resource(resource_id, table_name)
+    self.save_resources(resource_id, table_name)
+  end
 
   def self.save_resources(resource_id, table_name)
+    load File.join( File.dirname(__FILE__), "#{table_name.singularize}.rb")
     class_name = table_name.classify.constantize
     results = DataImporter.get_all(resource_id)
-
     results.each do |result|
-      class_name.create!(result)
+      result = class_name.send(:clean_data, result)
+      class_name.create(result)
     end
     nil
   end
