@@ -1,59 +1,58 @@
-### A prototype of an ETL and API for Open Denton
+### Open Denton API
 
-This is a prototype of an application that imports data from [the city of Denton's open data project](http://data.cityofdenton.com/)
-into a permanent schema, and offers a flexible API on top of that schema. The db is [PostgreSQL](https://www.postgresql.org/)
-and the framework for the API is [Sinatra](http://www.sinatrarb.com/).
+Hello! This page contains information on the API endpoints currently available,
+and will be updated as we add more. If there's a dataset you'd like added, please
+reach out to us on Slack via the `#opendenton-api` channel. Or, just come stick
+your head into the front conference room. Yay Open Data!!
 
-#### Install & bootstrap
+If you need help, or want to install the application locally, see [the readme]
+on our GitHub repository.
 
-- Install PostgreSQL
-  - [Mac](https://launchschool.com/blog/how-to-install-postgresql-on-a-mac)
-  - [Windows](http://www.postgresqltutorial.com/install-postgresql/)
-- Make sure you have [ruby installed](https://www.ruby-lang.org/en/documentation/installation/)
-- From the project directory, `gem install bundler`
-- Then `bundle install`
-- Run `rake db:create db:migrate`
+## Endpoints
 
-#### Running
+All endpoints are assuming a request of the type `GET`.
 
-- To run the server locally: `bundle exec ruby app/app.rb`
-- To import all available data, go to `<host[:port]>/import-data`
-- To delete all current data, go to `<host[:port]>/delete-data`
-- See example APIs locally (the 'year' params can vary between 2008 and 2014):
-  - http://localhost:4567/denton-housing
-  - http://localhost:4567/total-housing-units?year=2009
-  - http://localhost:4567/vacant-housing-units?year=2009
+#### `/`
 
-## Troubleshooting
+Home route, currently just returns a string.
 
-If you get the following error:
-```
-➜ psql: FATAL:  database "<user>" does not exist
-```
-Run the shell command, `createdb`. This creates a database with the name of the current user.
+#### `/denton-housing`
 
-Source: [Stack Overflow Article](http://stackoverflow.com/questions/17633422/psql-fatal-database-user-does-not-exist).
+Returns all housing data. [Original](http://data.cityofdenton.com/dataset/denton-tx-housing-data).
 
----
+#### `/total-housing-units[?year=]`
 
-If you used Brew to install Postgres, you can also use [services](https://robots.thoughtbot.com/starting-and-stopping-background-services-with-homebrew)
-to start and stop the `psql` background service.
+Returns all housing data by `year` [required].
 
-```raw
-➜ brew tap homebrew/services        ## if you don't have it already installed
-➜ brew services start postgresql
-➜ brew services start postgresql
-```
+#### `/vacant-housing-units[?year=]`
 
----
+Returns _vacant_ housing, by `year` [required].
 
-If the app crashes with the following warning:
+#### `/homelessness-survey`
 
-```
-$ ActiveRecord::ConnectionTimeoutError - could not obtain a connection from the pool within 5.000 seconds (waited 5.001 seconds); all pooled connections were in use:
-```
+Returns all "Point in Time Home Count Denton County". [Original](http://data.cityofdenton.com/dataset/point-in-time-home-count-denton-county).
 
-You broke it!
+#### `/well-inspections`
 
-Just kidding.. but the app will need to be restarted. We still need to build in
-some logic for handling blocking calls. Thanks fer yor patience!
+Returns all "Gas Wells - Inspections Layer" data. [Original](http://data.cityofdenton.com/dataset/gas-wells-inspections-layer)
+
+#### `/demographics`
+
+Returns all "Denton, TX Demographic Data". [Original](http://data.cityofdenton.com/dataset/denton-tx-demographic-data).
+
+#### `/demographics/:year`
+
+Returns Demographic data by year [optional].
+
+#### `/economics`
+
+Returns all "Denton, TX Economic Data". [Original](http://data.cityofdenton.com/dataset/denton-tx-economic-data).
+
+
+#### `/voter-districts`
+
+Returns all "Voter Districts". [Original](http://data.cityofdenton.com/dataset/voter-districts).
+
+
+
+[the readme]: https://github.com/OpenDenton/denton_data
