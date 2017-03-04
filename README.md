@@ -75,6 +75,10 @@ For examples below, the Resource ID is `5980ea98-ce00-4f7d-9ee3-114006f78f59` an
 1. `load 'app/data_saver.rb'`
 1. `DataSaver.save_all('5980ea98-ce00-4f7d-9ee3-114006f78f59', 'gas_well_inspections')`
 
+In Code
+
+1. Add Dataset Endpoint
+
 Files
 
 1. Stage `app/app.rb` and `schema.rb`
