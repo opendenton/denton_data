@@ -1,0 +1,192 @@
+# Example YAML to get you started quickly.
+# Be aware that YAML has indentation based scoping.
+# Code completion support is available so start typing for available options.
+swagger: '2.0'
+
+# This is your document metadata
+info:
+  version: "0.0.1"
+  title: Denton Open Data API
+
+# Describe your paths here
+paths:
+  /denton-housing:
+    get:
+      description: Gets `housing` summary objects by year.
+      responses:
+        '200':
+          description: A JSON array of housing summaries
+          schema:
+            type: array
+            items:
+              title: DentonHousing
+              type: object
+              properties:
+                year:
+                  type: integer
+                  format: int32
+                  minimum: 2008
+                  maximum: 2014
+                total_housing_units:
+                  type: integer
+                  format: int32
+                vacant_housing_units:
+                  type: integer
+                  format: int32
+                occupied_housing_units:
+                  type: integer
+                  format: int32
+                owner_occupied:
+                  type: integer
+                  format: int32
+                median_gross_rent:
+                  type: integer
+                  format: int32
+                renter_occupied:
+                  type: integer
+                  format: int32
+
+  /voter-districts:
+    get:
+      description: Gets `Voter District` objects.
+      responses:
+        '200':
+          description: A JSON array of voter districts
+          schema:
+            type: array
+            items:
+              title: VoterDistrict
+              type: object
+              properties:
+                _id:
+                  type: integer
+                  format: int64
+                objectid:
+                  type: integer
+                  format: int64
+                name:
+                  type: string
+                district_n:
+                  type: string
+                gid:
+                  type: integer
+                total_ac:
+                  type: integer
+                  format: int32
+                land_ac:
+                  type: integer
+                  format: int32
+                t_can_ac:
+                  type: integer
+                  format: int32
+                t_can_pct:
+                  type: integer
+                  format: int32
+                veg_ac:
+                  type: integer
+                  format: int32
+                veg_pct:
+                  type: integer
+                  format: int32
+                bld_ac:
+                  type: integer
+                  format: int32
+                bld_pct:
+                  type: integer
+                  format: int32
+                to_ia_ac:
+                  type: integer
+                  format: int32
+                to_ia_pct:
+                  type: integer
+                  format: int32
+                road_ac:
+                  type: integer
+                  format: int32
+                road_pct:
+                  type: integer
+                  format: int32
+                plot_ac:
+                  type: integer
+                  format: int32
+                plot_pct:
+                  type: integer
+                  format: int32
+                swalk_ac:
+                  type: integer
+                  format: int32
+                swalk_pct:
+                  type: integer
+                  format: int32
+                ot_ia_ac:
+                  type: integer
+                  format: int32
+                ot_ia_pct:
+                  type: integer
+                  format: int32
+                wat_ac:
+                  type: integer
+                  format: int32
+                wat_pct:
+                  type: integer
+                  format: int32
+                soil_ac:
+                  type: integer
+                  format: int32
+                soil_pct:
+                  type: integer
+                  format: int32
+                utc_ac:
+                  type: integer
+                  format: int32
+                utc_pct:
+                  type: integer
+                  format: int32
+                ppa_v_ac:
+                  type: integer
+                  format: int32
+                ppa_v_pct:
+                  type: integer
+                  format: int32
+                to_ppa_ac:
+                  type: integer
+                  format: int32
+                to_ppa_pct:
+                  type: integer
+                  format: int32
+                ppa_ia_ac:
+                  type: integer
+                  format: int32
+                ppa_ia_pct:
+                  type: integer
+                  format: int32
+                un_ia_ac:
+                  type: integer
+                  format: int32
+                un_ia_pct:
+                  type: integer
+                  format: int32
+                to_un_ac:
+                  type: integer
+                  format: int32
+                to_un_pct:
+                  type: integer
+                  format: int32
+                un_sl_ac:
+                  type: integer
+                  format: int32
+                un_sl_pct:
+                  type: integer
+                  format: int32
+                un_ot_ac:
+                  type: integer
+                  format: int32
+                un_ot_pct:
+                  type: integer
+                  format: int32
+                shape__area:
+                  type: integer
+                  format: int32
+                shape__length:
+                  type: integer
+                  format: int32
