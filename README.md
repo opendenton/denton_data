@@ -12,7 +12,7 @@ and the framework for the API is [Sinatra](http://www.sinatrarb.com/).
 - Make sure you have [ruby installed](https://www.ruby-lang.org/en/documentation/installation/)
 - From the project directory, `gem install bundler`
 - Then `bundle install`
-- Run `rake db:create db:migrate`
+- Run `rake db:create db:load`
 
 #### Running
 
