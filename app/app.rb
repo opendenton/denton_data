@@ -1,6 +1,8 @@
 require 'json'
 require 'sinatra'
 require "sinatra/activerecord"
+require 'uri'
+
 Dir["./app/models/*.rb"].each { |file| require file }
 
 configure :production do
@@ -131,4 +133,27 @@ get '/voter-districts' do
   VoterDistrict.all.map do |record|
     record.attributes.except('id')
   end.to_json
+end
+
+#########
+# Crime #
+#########
+
+get '/crimes' do
+  Crime.pluck('crime').group_by do |crime|
+    crime
+  end.map do |key, value|
+    data = Hash.new
+    data[:violaton] = key
+    data[:count] = value.count
+    data[:url] = URI.encode("/crimes/violation/#{URI.encode(key)}")
+    data
+  end.sort_by do |hash|
+    -hash[:count]
+  end.to_json
+end
+
+get '/crimes/violation/:crime' do
+  crime = URI.decode params[:crime]
+  Crime.where(crime: crime).to_json
 end
