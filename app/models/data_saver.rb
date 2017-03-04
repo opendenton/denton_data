@@ -1,7 +1,6 @@
 require 'pg'
 require 'sinatra/activerecord'
 require 'active_support/all'
-require 'pry'
 require_relative './data_importer'
 require_relative './well_inspection'
 require_relative './file_generator'
@@ -20,7 +19,7 @@ class DataSaver
     results = DataImporter.get_all(resource_id)
 
     results.each do |result|
-      class_name.create(result)
+      class_name.create!(result)
     end
     nil
   end

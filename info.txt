@@ -25,3 +25,15 @@ Add ruby version
 Convert schema.sql to AR migration so that running `rake db:migrate` will just work
 Update README to reflect AR changes
 Convert housing to use AR
+
+
+--------------------------
+HOW-TO IMPORT NEW DATASETS
+--------------------------
+
+require_relative './data_importer'
+
+resourceId = 'dbbec00e-87cc-4f9e-b029-97c161b08f60'
+table_name = 'demographics'
+
+DataImporter.get_sampling(resourceId, table_name)
