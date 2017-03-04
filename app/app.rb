@@ -1,7 +1,6 @@
 require 'json'
 require 'sinatra'
 require "sinatra/activerecord"
-
 Dir["./app/models/*.rb"].each { |file| require file }
 
 configure :production do
@@ -26,7 +25,10 @@ get '/import-data' do
   School.import
   DentonDemographic.import
   WellInspection.import
-  ImportDentonHouse.import_housing
+  DentonHouse.import
+  HomelessnessSurvey.import
+  Demographic.import
+  Economic.import
 end
 
 ###################
@@ -39,6 +41,9 @@ get '/delete-data' do
   DentonDemographic.delete_all
   WellInspection.delete_all
   DentonHouse.delete_all
+  HomelessnessSurvey.destroy_all
+  Demographic.destroy_all
+  Economic.destroy_all
 end
 
 #################
@@ -57,6 +62,16 @@ get '/vacant-housing-units' do
   DentonHouse.vacant_housing_units(params["year"]).to_json
 end
 
+########################
+# Homelessness Surveys #
+########################
+
+get '/homelessness-survey' do
+  HomelessnessSurvey.all.map do |record|
+    record.attributes.except('id')
+  end.to_json
+end
+
 ###################
 # Well Inspection #
 ###################
@@ -72,3 +87,30 @@ get '/' do
   inspections = WellInspection.all
   "#{inspections.map { |i| i.operator }}!"
 end
+
+################
+# Demographics #
+################
+
+get '/demographics' do
+  Demographic.all.map do |record|
+    record.attributes.except('id')
+  end.to_json
+end
+
+get '/demographics/:year' do
+  Demographic.where(year: params[:year]).each_with_object({}) do |demo, obj|
+    obj[demo.title_field] = demo.value
+  end.to_json
+end
+
+################
+# Ecoomics #
+################
+
+get '/economics' do
+  Economic.all.map do |record|
+    record.attributes.except('id')
+  end.to_json
+end
+

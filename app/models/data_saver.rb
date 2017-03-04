@@ -22,4 +22,23 @@ class DataSaver
     nil
   end
 
+  def self.save_sample_data(result, table_name)
+    FileGenerator.generate_json(result)
+
+    attributes = self.parse_attributes(result['fields'])
+    FileGenerator.generate_migration(table_name, attributes)
+  end
+
+  private
+
+    def self.parse_attributes(fields)
+      attributes = {}
+      fields.each do |field|
+        attr_name = field["id"]
+        data_type = FIELDS_MAP[field["type"].to_sym]
+        attributes[attr_name] = data_type
+      end
+      attributes
+    end
+
 end

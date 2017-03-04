@@ -5,3 +5,5 @@ vendor/
 config/env.yml
 
 config/postgres.info
+
+data/temp_data_*
