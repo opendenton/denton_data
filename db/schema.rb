@@ -111,17 +111,17 @@ ActiveRecord::Schema.define(version: 20170304200019) do
   end
 
   create_table "schools", force: :cascade do |t|
-    t.float  "objectid"
-    t.float  "gis_nr_sde_schools_area"
-    t.float  "perimeter"
-    t.float  "poi_"
-    t.float  "poi_id"
-    t.float  "symbol"
-    t.string "school"
-    t.string "address"
-    t.string "type_of_school"
-    t.float  "shapearea"
-    t.float  "shapelen"
+    t.integer "objectid"
+    t.float   "gis_nr_sde_schools_area"
+    t.float   "perimeter"
+    t.integer "poi_"
+    t.integer "poi_id"
+    t.integer "symbol"
+    t.string  "school"
+    t.string  "address"
+    t.string  "type_of_school"
+    t.float   "shapearea"
+    t.float   "shapelen"
   end
 
   create_table "voter_districts", force: :cascade do |t|
