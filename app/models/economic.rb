@@ -4,4 +4,9 @@ class Economic < ActiveRecord::Base
   def self.import
     DataSaver.save_resources(RESOURCE_ID, 'economics')
   end
+
+  def self.clean_data(data)
+    #
+    data
+  end
 end

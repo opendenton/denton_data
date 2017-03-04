@@ -4,4 +4,9 @@ class HomelessnessSurvey < ActiveRecord::Base
   def self.import
     DataSaver.save_resources(RESOURCE_ID, 'homelessness_surveys')
   end
+
+  def self.clean_data(data)
+    #
+    data
+  end
 end

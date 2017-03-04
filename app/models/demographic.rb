@@ -4,4 +4,9 @@ class Demographic < ActiveRecord::Base
   def self.import
     DataSaver.save_resources(RESOURCE_ID, 'demographics')
   end
+
+  def self.clean_data(data)
+    #
+    data
+  end
 end
