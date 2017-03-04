@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170304190000) do
+ActiveRecord::Schema.define(version: 20170304200019) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -67,8 +67,8 @@ ActiveRecord::Schema.define(version: 20170304190000) do
 
   create_table "gas_well_inspections", force: :cascade do |t|
     t.integer  "_id"
-    t.integer  "x"
-    t.integer  "y"
+    t.float    "x"
+    t.float    "y"
     t.integer  "objectid"
     t.string   "sitetype"
     t.integer  "featureid"
@@ -111,18 +111,17 @@ ActiveRecord::Schema.define(version: 20170304190000) do
   end
 
   create_table "schools", force: :cascade do |t|
-    t.integer "_id"
-    t.integer "objectid"
-    t.integer "gis_nr_sde_schools_area"
-    t.integer "perimeter"
-    t.integer "poi_"
-    t.integer "poi_id"
-    t.integer "symbol"
-    t.string  "school"
-    t.string  "address"
-    t.string  "type_of_school"
-    t.integer "shapearea"
-    t.integer "shapelen"
+    t.float  "objectid"
+    t.float  "gis_nr_sde_schools_area"
+    t.float  "perimeter"
+    t.float  "poi_"
+    t.float  "poi_id"
+    t.float  "symbol"
+    t.string "school"
+    t.string "address"
+    t.string "type_of_school"
+    t.float  "shapearea"
+    t.float  "shapelen"
   end
 
   create_table "voter_districts", force: :cascade do |t|
