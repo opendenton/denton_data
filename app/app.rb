@@ -29,6 +29,7 @@ get '/import-data' do
   HomelessnessSurvey.import
   Demographic.import
   Economic.import
+  "Data Imported"
 end
 
 ###################
@@ -44,6 +45,7 @@ get '/delete-data' do
   HomelessnessSurvey.destroy_all
   Demographic.destroy_all
   Economic.destroy_all
+  "She's dead, Jim."
 end
 
 #################
@@ -113,4 +115,3 @@ get '/economics' do
     record.attributes.except('id')
   end.to_json
 end
-
