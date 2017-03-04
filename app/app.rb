@@ -25,7 +25,6 @@ get '/import-data' do
 	VoterDistrict.import
   Billboard.import
   School.import
-  WellInspection.import
   DentonHouse.import
   HomelessnessSurvey.import
   Demographic.import
@@ -42,7 +41,6 @@ get '/delete-data' do
 	VoterDistrict.delete_all
   Billboard.delete_all
   School.delete_all
-  WellInspection.delete_all
   DentonHouse.delete_all
   HomelessnessSurvey.destroy_all
   Demographic.destroy_all
@@ -84,13 +82,16 @@ get '/homelessness-survey' do
   end.to_json
 end
 
-###################
-# Well Inspection #
-###################
+#######################
+# Gas Well Inspection #
+#######################
 
-get '/well-inspections' do
-  inspections = WellInspection.order(objectid: :asc)
-  "Number of entries: #{inspections.count}<br>#{inspections.map { |i| i.objectid }}!"
+get '/gas-well-inspections' do
+  GasWellInspection.all.select( 'id, x, y, siteaddres, fullname, lastinspectiondate, status' ).to_json
+end
+
+get '/gas-well-inspections/:id' do
+  GasWellInspection.where(id: params[:id]).to_json
 end
 
 ################
