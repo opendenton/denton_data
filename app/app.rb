@@ -21,6 +21,7 @@ end
 ###############################################
 
 get '/import-data' do
+	GasWellInspection.import
 	VoterDistrict.import
   Billboard.import
   School.import
@@ -38,6 +39,7 @@ end
 ###################
 
 get '/delete-data' do
+	GasWellInspection.delete_all
 	VoterDistrict.delete_all
   Billboard.delete_all
   School.delete_all

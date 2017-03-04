@@ -57,3 +57,27 @@ You broke it!
 
 Just kidding.. but the app will need to be restarted. We still need to build in
 some logic for handling blocking calls. Thanks fer yor patience!
+
+
+
+## Data Import
+
+1. Browse http://data.cityofdenton.com/dataset
+1. Find Dataset, click on CSV
+1. Select CSV, Explore, Preview
+1. Select `Data API` and find "Query Example (first 5 results)", grab `resource_id` value
+
+For examples below, the Resource ID is `5980ea98-ce00-4f7d-9ee3-114006f78f59` and the DB table will be `gas_well_inspections`.
+
+1. in terminal open `pry`
+1. `load 'app/data_importer.rb'`
+1. `DataImporter.get_sampling('5980ea98-ce00-4f7d-9ee3-114006f78f59', 'gas_well_inspections')`
+1. `load 'app/data_saver.rb'`
+1. `DataSaver.save_all('5980ea98-ce00-4f7d-9ee3-114006f78f59', 'gas_well_inspections')`
+
+Files
+
+1. Stage `app/app.rb` and `schema.rb`
+1. Add new model in `app/models` e.g. `app/models/gas_well_inspection.rb`
+1. Add new migration in `db/migrate`
+1. Commit on feature branch

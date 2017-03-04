@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170304163331) do
+ActiveRecord::Schema.define(version: 20170304175623) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -70,6 +70,42 @@ ActiveRecord::Schema.define(version: 20170304163331) do
     t.integer "year"
     t.string  "title_field"
     t.integer "value"
+  end
+
+  create_table "gas_well_inspections", force: :cascade do |t|
+    t.integer  "_id"
+    t.integer  "x"
+    t.integer  "y"
+    t.integer  "objectid"
+    t.string   "sitetype"
+    t.integer  "featureid"
+    t.string   "trakitid"
+    t.string   "propertyid"
+    t.string   "siteaddres"
+    t.string   "operator"
+    t.string   "descriptio"
+    t.string   "wellid"
+    t.string   "status"
+    t.string   "site"
+    t.string   "rrcid"
+    t.string   "platid"
+    t.datetime "platdate"
+    t.string   "amendedpla"
+    t.datetime "amendedp_1"
+    t.string   "roaddmgfee"
+    t.datetime "feepaiddat"
+    t.string   "invoicesta"
+    t.datetime "invoices_1"
+    t.string   "rrcpermit"
+    t.datetime "rrcpermitd"
+    t.datetime "casingdate"
+    t.datetime "spudcompda"
+    t.datetime "plugdate"
+    t.string   "gaswelllocation"
+    t.string   "zoningdistrict"
+    t.string   "zoningcase"
+    t.datetime "lastinspectiondate"
+    t.string   "fullname"
   end
 
   create_table "homelessness_surveys", force: :cascade do |t|
