@@ -21,6 +21,7 @@ end
 ###############################################
 
 get '/import-data' do
+	VoterDistrict.import
   Billboard.import
   School.import
   DentonDemographic.import
@@ -37,6 +38,7 @@ end
 ###################
 
 get '/delete-data' do
+	VoterDistrict.delete_all
   Billboard.delete_all
   School.delete_all
   DentonDemographic.delete_all
@@ -46,6 +48,14 @@ get '/delete-data' do
   Demographic.destroy_all
   Economic.destroy_all
   "She's dead, Jim."
+end
+
+##########
+# Home / #
+##########
+
+get '/' do
+  "Endpoints here."
 end
 
 #################
@@ -78,16 +88,9 @@ end
 # Well Inspection #
 ###################
 
-get '/' do
-  time = Time.now
+get '/well-inspections' do
   inspections = WellInspection.order(objectid: :asc)
   "Number of entries: #{inspections.count}<br>#{inspections.map { |i| i.objectid }}!"
-end
-
-get '/' do
-  time = Time.now
-  inspections = WellInspection.all
-  "#{inspections.map { |i| i.operator }}!"
 end
 
 ################
@@ -112,6 +115,17 @@ end
 
 get '/economics' do
   Economic.all.map do |record|
+    record.attributes.except('id')
+  end.to_json
+end
+
+
+###################
+# Voter Districts #
+###################
+
+get '/voter-districts' do
+  VoterDistrict.all.map do |record|
     record.attributes.except('id')
   end.to_json
 end
