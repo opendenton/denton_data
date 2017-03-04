@@ -25,7 +25,6 @@ get '/import-data' do
 	VoterDistrict.import
   Billboard.import
   School.import
-  DentonDemographic.import
   WellInspection.import
   DentonHouse.import
   HomelessnessSurvey.import
@@ -43,7 +42,6 @@ get '/delete-data' do
 	VoterDistrict.delete_all
   Billboard.delete_all
   School.delete_all
-  DentonDemographic.delete_all
   WellInspection.delete_all
   DentonHouse.delete_all
   HomelessnessSurvey.destroy_all
